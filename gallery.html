@@ -1,0 +1,1520 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MuralKitCanada Preview Catalogue</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #121212;
+            color: #ffffff;
+            margin: 0;
+            padding: 20px;
+        }
+        h1 {
+            text-align: center;
+            color: #00ffd5;
+            margin-bottom: 10px;
+        }
+        .subtitle {
+            text-align: center;
+            color: #aaaaaa;
+            margin-bottom: 30px;
+            font-size: 1.1rem;
+        }
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 25px;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+        .mural-card {
+            background-color: #1e1e1e;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+            border: 1px solid #2d2d2d;
+        }
+        .mural-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0,255,213,0.2);
+        }
+        .mural-card img {
+            width: 100%;
+            height: 220px;
+            object-fit: cover;
+            cursor: pointer;
+            display: block;
+        }
+        .card-info {
+            padding: 15px;
+        }
+        .card-info h3 {
+            margin: 0 0 8px 0;
+            font-size: 1.2rem;
+            color: #ffffff;
+        }
+        .card-info p {
+            margin: 4px 0;
+            color: #aaaaaa;
+            font-size: 0.95rem;
+        }
+        .tile-badge {
+            display: inline-block;
+            background-color: #00ffd5;
+            color: #121212;
+            padding: 3px 8px;
+            border-radius: 4px;
+            font-weight: bold;
+            font-size: 0.85rem;
+            margin-top: 8px;
+        }
+        .lightbox-modal {
+            display: none; 
+            position: fixed; 
+            z-index: 1000; 
+            padding-top: 40px; 
+            left: 0;
+            top: 0;
+            width: 100%; 
+            height: 100%; 
+            overflow: auto; 
+            background-color: rgba(0, 0, 0, 0.95);
+        }
+        .lightbox-content {
+            margin: auto;
+            display: block;
+            max-width: 90%;
+            max-height: 75vh;
+            border: 3px solid #ffffff;
+            border-radius: 4px;
+            box-shadow: 0 4px 25px rgba(0,0,0,0.7);
+        }
+        .lightbox-caption {
+            margin: auto;
+            display: block;
+            width: 85%;
+            max-width: 800px;
+            text-align: center;
+            color: #e0e0e0;
+            padding: 20px 0;
+            font-size: 1.25rem;
+            line-height: 1.5;
+        }
+        .lightbox-close {
+            position: absolute;
+            top: 15px;
+            right: 35px;
+            color: #ffffff;
+            font-size: 45px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: color 0.2s;
+            user-select: none;
+        }
+        .lightbox-close:hover {
+            color: #00ffd5;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>MuralKitCanada Visual Catalog</h1>
+    <div class="subtitle">Any image can be made to the size you need, just figure out how many tiles it will take. 
+    Click any image below to preview it, then purchase the number of tiles you need.</div>
+
+    <div class="gallery-grid">
+
+        <div class="mural-card">
+            <img src="thumbnails\thumb_001.jpg" 
+                 alt="Mural #001" 
+                 onclick="openLightbox('images\001.jpg', '<strong>Mural #001</strong><br>Dimensions: 34" × 55"<br>Requires 20 Premium Matte Borderless Photo Paper Tiles (4 Columns × 5 Rows)')">
+            <div class="card-info">
+                <h3>Mural #001</h3>
+                <p>Size: 34" × 55"</p>
+                <div class="tile-badge">20 Tiles</div>
+            </div>
+        </div>
+        <div class="mural-card">
+            <img src="thumbnails\thumb_002.jpg" 
+                 alt="Mural #002" 
+                 onclick="openLightbox('images\002.jpg', '<strong>Mural #002</strong><br>Dimensions: 136" × 55"<br>Requires 80 Premium Matte Borderless Photo Paper Tiles (16 Columns × 5 Rows)')">
+            <div class="card-info">
+                <h3>Mural #002</h3>
+                <p>Size: 136" × 55"</p>
+                <div class="tile-badge">80 Tiles</div>
+            </div>
+        </div>
+        <div class="mural-card">
+            <img src="thumbnails\thumb_003.jpg" 
+                 alt="Mural #003" 
+                 onclick="openLightbox('images\003.jpg', '<strong>Mural #003</strong><br>Dimensions: 85" × 55"<br>Requires 50 Premium Matte Borderless Photo Paper Tiles (10 Columns × 5 Rows)')">
+            <div class="card-info">
+                <h3>Mural #003</h3>
+                <p>Size: 85" × 55"</p>
+                <div class="tile-badge">50 Tiles</div>
+            </div>
+        </div>
+        <div class="mural-card">
+            <img src="thumbnails\thumb_004.jpg" 
+                 alt="Mural #004" 
+                 onclick="openLightbox('images\004.jpg', '<strong>Mural #004</strong><br>Dimensions: 42" × 55"<br>Requires 25 Premium Matte Borderless Photo Paper Tiles (5 Columns × 5 Rows)')">
+            <div class="card-info">
+                <h3>Mural #004</h3>
+                <p>Size: 42" × 55"</p>
+                <div class="tile-badge">25 Tiles</div>
+            </div>
+        </div>
+        <div class="mural-card">
+            <img src="thumbnails\thumb_005.jpg" 
+                 alt="Mural #005" 
+                 onclick="openLightbox('images\005.jpg', '<strong>Mural #005</strong><br>Dimensions: 42" × 55"<br>Requires 25 Premium Matte Borderless Photo Paper Tiles (5 Columns × 5 Rows)')">
+            <div class="card-info">
+                <h3>Mural #005</h3>
+                <p>Size: 42" × 55"</p>
+                <div class="tile-badge">25 Tiles</div>
+            </div>
+        </div>
+        <div class="mural-card">
+            <img src="thumbnails\thumb_006.jpg" 
+                 alt="Mural #006" 
+                 onclick="openLightbox('images\006.jpg', '<strong>Mural #006</strong><br>Dimensions: 68" × 55"<br>Requires 40 Premium Matte Borderless Photo Paper Tiles (8 Columns × 5 Rows)')">
+            <div class="card-info">
+                <h3>Mural #006</h3>
+                <p>Size: 68" × 55"</p>
+                <div class="tile-badge">40 Tiles</div>
+            </div>
+        </div>
+        <div class="mural-card">
+            <img src="thumbnails\thumb_007.jpg" 
+                 alt="Mural #007" 
+                 onclick="openLightbox('images\007.jpg', '<strong>Mural #007</strong><br>Dimensions: 93" × 55"<br>Requires 55 Premium Matte Borderless Photo Paper Tiles (11 Columns × 5 Rows)')">
+            <div class="card-info">
+                <h3>Mural #007</h3>
+                <p>Size: 93" × 55"</p>
+                <div class="tile-badge">55 Tiles</div>
+            </div>
+        </div>
+        <div class="mural-card">
+            <img src="thumbnails\thumb_008.jpg" 
+                 alt="Mural #008" 
+                 onclick="openLightbox('images\008.jpg', '<strong>Mural #008</strong><br>Dimensions: 76" × 55"<br>Requires 45 Premium Matte Borderless Photo Paper Tiles (9 Columns × 5 Rows)')">
+            <div class="card-info">
+                <h3>Mural #008</h3>
+                <p>Size: 76" × 55"</p>
+                <div class="tile-badge">45 Tiles</div>
+            </div>
+        </div>
+        <div class="mural-card">
+            <img src="thumbnails\thumb_009.jpg" 
+                 alt="Mural #009" 
+                 onclick="openLightbox('images\009.jpg', '<strong>Mural #009</strong><br>Dimensions: 85" × 55"<br>Requires 50 Premium Matte Borderless Photo Paper Tiles (10 Columns × 5 Rows)')">
+            <div class="card-info">
+                <h3>Mural #009</h3>
+                <p>Size: 85" × 55"</p>
+                <div class="tile-badge">50 Tiles</div>
+            </div>
+        </div>
+        <div class="mural-card">
+            <img src="thumbnails\thumb_010.jpg" 
+                 alt="Mural #010" 
+                 onclick="openLightbox('images\010.jpg', '<strong>Mural #010</strong><br>Dimensions: 85" × 55"<br>Requires 50 Premium Matte Borderless Photo Paper Tiles (10 Columns × 5 Rows)')">
+            <div class="card-info">
+                <h3>Mural #010</h3>
+                <p>Size: 85" × 55"</p>
+                <div class="tile-badge">50 Tiles</div>
+            </div>
+        </div>
+        <div class="mural-card">
+            <img src="thumbnails\thumb_011.jpg" 
+                 alt="Mural #011" 
+                 onclick="openLightbox('images\011.jpg', '<strong>Mural #011</strong><br>Dimensions: 68" × 55"<br>Requires 40 Premium Matte Borderless Photo Paper Tiles (8 Columns × 5 Rows)')">
+            <div class="card-info">
+                <h3>Mural #011</h3>
+                <p>Size: 68" × 55"</p>
+                <div class="tile-badge">40 Tiles</div>
+            </div>
+        </div>
+        <div class="mural-card">
+            <img src="thumbnails\thumb_012.jpg" 
+                 alt="Mural #012" 
+                 onclick="openLightbox('images\012.jpg', '<strong>Mural #012</strong><br>Dimensions: 59" × 55"<br>Requires 35 Premium Matte Borderless Photo Paper Tiles (7 Columns × 5 Rows)')">
+            <div class="card-info">
+                <h3>Mural #012</h3>
+                <p>Size: 59" × 55"</p>
+                <div class="tile-badge">35 Tiles</div>
+            </div>
+        </div>
+        <div class="mural-card">
+            <img src="thumbnails\thumb_013.jpg" 
+                 alt="Mural #013" 
+                 onclick="openLightbox('images\013.jpg', '<strong>Mural #013</strong><br>Dimensions: 161" × 55"<br>Requires 95 Premium Matte Borderless Photo Paper Tiles (19 Columns × 5 Rows)')">
+            <div class="card-info">
+                <h3>Mural #013</h3>
+                <p>Size: 161" × 55"</p>
+                <div class="tile-badge">95 Tiles</div>
+            </div>
+        </div>
+        <div class="mural-card">
+            <img src="thumbnails\thumb_014.jpg" 
+                 alt="Mural #014" 
+                 onclick="openLightbox('images\014.jpg', '<strong>Mural #014</strong><br>Dimensions: 68" × 55"<br>Requires 40 Premium Matte Borderless Photo Paper Tiles (8 Columns × 5 Rows)')">
+            <div class="card-info">
+                <h3>Mural #014</h3>
+                <p>Size: 68" × 55"</p>
+                <div class="tile-badge">40 Tiles</div>
+            </div>
+        </div>
+        <div class="mural-card">
+            <img src="thumbnails\thumb_015.jpg" 
+                 alt="Mural #015" 
+                 onclick="openLightbox('images\015.jpg', '<strong>Mural #015</strong><br>Dimensions: 51" × 55"<br>Requires 30 Premium Matte Borderless Photo Paper Tiles (6 Columns × 5 Rows)')">
+            <div class="card-info">
+                <h3>Mural #015</h3>
+                <p>Size: 51" × 55"</p>
+                <div class="tile-badge">30 Tiles</div>
+            </div>
+        </div>
+        <div class="mural-card">
+            <img src="thumbnails\thumb_016.jpg" 
+                 alt="Mural #016" 
+                 onclick="openLightbox('images\016.jpg', '<strong>Mural #016</strong><br>Dimensions: 51" × 55"<br>Requires 30 Premium Matte Borderless Photo Paper Tiles (6 Columns × 5 Rows)')">
+            <div class="card-info">
+                <h3>Mural #016</h3>
+                <p>Size: 51" × 55"</p>
+                <div class="tile-badge">30 Tiles</div>
+            </div>
+        </div>
+        <div class="mural-card">
+            <img src="thumbnails\thumb_017.jpg" 
+                 alt="Mural #017" 
+                 onclick="openLightbox('images\017.jpg', '<strong>Mural #017</strong><br>Dimensions: 51" × 55"<br>Requires 30 Premium Matte Borderless Photo Paper Tiles (6 Columns × 5 Rows)')">
+            <div class="card-info">
+                <h3>Mural #017</h3>
+                <p>Size: 51" × 55"</p>
+                <div class="tile-badge">30 Tiles</div>
+            </div>
+        </div>
+        <div class="mural-card">
+            <img src="thumbnails\thumb_018.jpg" 
+                 alt="Mural #018" 
+                 onclick="openLightbox('images\018.jpg', '<strong>Mural #018</strong><br>Dimensions: 51" × 55"<br>Requires 30 Premium Matte Borderless Photo Paper Tiles (6 Columns × 5 Rows)')">
+            <div class="card-info">
+                <h3>Mural #018</h3>
+                <p>Size: 51" × 55"</p>
+                <div class="tile-badge">30 Tiles</div>
+            </div>
+        </div>
+        <div class="mural-card">
+            <img src="thumbnails\thumb_019.jpg" 
+                 alt="Mural #019" 
+                 onclick="openLightbox('images\019.jpg', '<strong>Mural #019</strong><br>Dimensions: 51" × 55"<br>Requires 30 Premium Matte Borderless Photo Paper Tiles (6 Columns × 5 Rows)')">
+            <div class="card-info">
+                <h3>Mural #019</h3>
+                <p>Size: 51" × 55"</p>
+                <div class="tile-badge">30 Tiles</div>
+            </div>
+        </div>
+        <div class="mural-card">
+            <img src="thumbnails\thumb_020.jpg" 
+                 alt="Mural #020" 
+                 onclick="openLightbox('images\020.jpg', '<strong>Mural #020</strong><br>Dimensions: 51" × 55"<br>Requires 30 Premium Matte Borderless Photo Paper Tiles (6 Columns × 5 Rows)')">
+            <div class="card-info">
+                <h3>Mural #020</h3>
+                <p>Size: 51" × 55"</p>
+                <div class="tile-badge">30 Tiles</div>
+            </div>
+        </div>
+        <div class="mural-card">
+            <img src="thumbnails\thumb_021.jpg" 
+                 alt="Mural #021" 
+                 onclick="openLightbox('images\021.jpg', '<strong>Mural #021</strong><br>Dimensions: 102" × 55"<br>Requires 60 Premium Matte Borderless Photo Paper Tiles (12 Columns × 5 Rows)')">
+            <div class="card-info">
+                <h3>Mural #021</h3>
+                <p>Size: 102" × 55"</p>
+                <div class="tile-badge">60 Tiles</div>
+            </div>
+        </div>
+        <div class="mural-card">
+            <img src="thumbnails\thumb_022.jpg" 
+                 alt="Mural #022" 
+                 onclick="openLightbox('images\022.jpg', '<strong>Mural #022</strong><br>Dimensions: 51" × 55"<br>Requires 30 Premium Matte Borderless Photo Paper Tiles (6 Columns × 5 Rows)')">
+            <div class="card-info">
+                <h3>Mural #022</h3>
+                <p>Size: 51" × 55"</p>
+                <div class="tile-badge">30 Tiles</div>
+            </div>
+        </div>
+        <div class="mural-card">
+            <img src="thumbnails\thumb_023.jpg" 
+                 alt="Mural #023" 
+                 onclick="openLightbox('images\023.jpg', '<strong>Mural #023</strong><br>Dimensions: 76" × 55"<br>Requires 45 Premium Matte Borderless Photo Paper Tiles (9 Columns × 5 Rows)')">
+            <div class="card-info">
+                <h3>Mural #023</h3>
+                <p>Size: 76" × 55"</p>
+                <div class="tile-badge">45 Tiles</div>
+            </div>
+        </div>
+        <div class="mural-card">
+            <img src="thumbnails\thumb_024.jpg" 
+                 alt="Mural #024" 
+                 onclick="openLightbox('images\024.jpg', '<strong>Mural #024</strong><br>Dimensions: 76" × 55"<br>Requires 45 Premium Matte Borderless Photo Paper Tiles (9 Columns × 5 Rows)')">
+            <div class="card-info">
+                <h3>Mural #024</h3>
+                <p>Size: 76" × 55"</p>
+                <div class="tile-badge">45 Tiles</div>
+            </div>
+        </div>
+        <div class="mural-card">
+            <img src="thumbnails\thumb_025.jpg" 
+                 alt="Mural #025" 
+                 onclick="openLightbox('images\025.jpg', '<strong>Mural #025</strong><br>Dimensions: 68" × 55"<br>Requires 40 Premium Matte Borderless Photo Paper Tiles (8 Columns × 5 Rows)')">
+            <div class="card-info">
+                <h3>Mural #025</h3>
+                <p>Size: 68" × 55"</p>
+                <div class="tile-badge">40 Tiles</div>
+            </div>
+        </div>
+        <div class="mural-card">
+            <img src="thumbnails\thumb_027.jpg" 
+                 alt="Mural #027" 
+                 onclick="openLightbox('images\027.jpg', '<strong>Mural #027</strong><br>Dimensions: 110" × 55"<br>Requires 65 Premium Matte Borderless Photo Paper Tiles (13 Columns × 5 Rows)')">
+            <div class="card-info">
+                <h3>Mural #027</h3>
+                <p>Size: 110" × 55"</p>
+                <div class="tile-badge">65 Tiles</div>
+            </div>
+        </div>
+        <div class="mural-card">
+            <img src="thumbnails\thumb_028.jpg" 
+                 alt="Mural #028" 
+                 onclick="openLightbox('images\028.jpg', '<strong>Mural #028</strong><br>Dimensions: 51" × 55"<br>Requires 30 Premium Matte Borderless Photo Paper Tiles (6 Columns × 5 Rows)')">
+            <div class="card-info">
+                <h3>Mural #028</h3>
+                <p>Size: 51" × 55"</p>
+                <div class="tile-badge">30 Tiles</div>
+            </div>
+        </div>
+        <div class="mural-card">
+            <img src="thumbnails\thumb_029.jpg" 
+                 alt="Mural #029" 
+                 onclick="openLightbox('images\029.jpg', '<strong>Mural #029</strong><br>Dimensions: 51" × 55"<br>Requires 30 Premium Matte Borderless Photo Paper Tiles (6 Columns × 5 Rows)')">
+            <div class="card-info">
+                <h3>Mural #029</h3>
+                <p>Size: 51" × 55"</p>
+                <div class="tile-badge">30 Tiles</div>
+            </div>
+        </div>
+        <div class="mural-card">
+            <img src="thumbnails\thumb_030.jpg" 
+                 alt="Mural #030" 
+                 onclick="openLightbox('images\030.jpg', '<strong>Mural #030</strong><br>Dimensions: 68" × 55"<br>Requires 40 Premium Matte Borderless Photo Paper Tiles (8 Columns × 5 Rows)')">
+            <div class="card-info">
+                <h3>Mural #030</h3>
+                <p>Size: 68" × 55"</p>
+                <div class="tile-badge">40 Tiles</div>
+            </div>
+        </div>
+        <div class="mural-card">
+            <img src="thumbnails\thumb_031.jpg" 
+                 alt="Mural #031" 
+                 onclick="openLightbox('images\031.jpg', '<strong>Mural #031</strong><br>Dimensions: 68" × 55"<br>Requires 40 Premium Matte Borderless Photo Paper Tiles (8 Columns × 5 Rows)')">
+            <div class="card-info">
+                <h3>Mural #031</h3>
+                <p>Size: 68" × 55"</p>
+                <div class="tile-badge">40 Tiles</div>
+            </div>
+        </div>
+        <div class="mural-card">
+            <img src="thumbnails\thumb_032.jpg" 
+                 alt="Mural #032" 
+                 onclick="openLightbox('images\032.jpg', '<strong>Mural #032</strong><br>Dimensions: 76" × 55"<br>Requires 45 Premium Matte Borderless Photo Paper Tiles (9 Columns × 5 Rows)')">
+            <div class="card-info">
+                <h3>Mural #032</h3>
+                <p>Size: 76" × 55"</p>
+                <div class="tile-badge">45 Tiles</div>
+            </div>
+        </div>
+        <div class="mural-card">
+            <img src="thumbnails\thumb_033.jpg" 
+                 alt="Mural #033" 
+                 onclick="openLightbox('images\033.jpg', '<strong>Mural #033</strong><br>Dimensions: 85" × 55"<br>Requires 50 Premium Matte Borderless Photo Paper Tiles (10 Columns × 5 Rows)')">
+            <div class="card-info">
+                <h3>Mural #033</h3>
+                <p>Size: 85" × 55"</p>
+                <div class="tile-badge">50 Tiles</div>
+            </div>
+        </div>
+        <div class="mural-card">
+            <img src="thumbnails\thumb_034.jpg" 
+                 alt="Mural #034" 
+                 onclick="openLightbox('images\034.jpg', '<strong>Mural #034</strong><br>Dimensions: 85" × 55"<br>Requires 50 Premium Matte Borderless Photo Paper Tiles (10 Columns × 5 Rows)')">
+            <div class="card-info">
+                <h3>Mural #034</h3>
+                <p>Size: 85" × 55"</p>
+                <div class="tile-badge">50 Tiles</div>
+            </div>
+        </div>
+        <div class="mural-card">
+            <img src="thumbnails\thumb_035.jpg" 
+                 alt="Mural #035" 
+                 onclick="openLightbox('images\035.jpg', '<strong>Mural #035</strong><br>Dimensions: 85" × 55"<br>Requires 50 Premium Matte Borderless Photo Paper Tiles (10 Columns × 5 Rows)')">
+            <div class="card-info">
+                <h3>Mural #035</h3>
+                <p>Size: 85" × 55"</p>
+                <div class="tile-badge">50 Tiles</div>
+            </div>
+        </div>
+        <div class="mural-card">
+            <img src="thumbnails\thumb_036.jpg" 
+                 alt="Mural #036" 
+                 onclick="openLightbox('images\036.jpg', '<strong>Mural #036</strong><br>Dimensions: 85" × 55"<br>Requires 50 Premium Matte Borderless Photo Paper Tiles (10 Columns × 5 Rows)')">
+            <div class="card-info">
+                <h3>Mural #036</h3>
+                <p>Size: 85" × 55"</p>
+                <div class="tile-badge">50 Tiles</div>
+            </div>
+        </div>
+        <div class="mural-card">
+            <img src="thumbnails\thumb_037.jpg" 
+                 alt="Mural #037" 
+                 onclick="openLightbox('images\037.jpg', '<strong>Mural #037</strong><br>Dimensions: 68" × 55"<br>Requires 40 Premium Matte Borderless Photo Paper Tiles (8 Columns × 5 Rows)')">
+            <div class="card-info">
+                <h3>Mural #037</h3>
+                <p>Size: 68" × 55"</p>
+                <div class="tile-badge">40 Tiles</div>
+            </div>
+        </div>
+        <div class="mural-card">
+            <img src="thumbnails\thumb_038.jpg" 
+                 alt="Mural #038" 
+                 onclick="openLightbox('images\038.jpg', '<strong>Mural #038</strong><br>Dimensions: 25" × 55"<br>Requires 15 Premium Matte Borderless Photo Paper Tiles (3 Columns × 5 Rows)')">
+            <div class="card-info">
+                <h3>Mural #038</h3>
+                <p>Size: 25" × 55"</p>
+                <div class="tile-badge">15 Tiles</div>
+            </div>
+        </div>
+        <div class="mural-card">
+            <img src="thumbnails\thumb_039.jpg" 
+                 alt="Mural #039" 
+                 onclick="openLightbox('images\039.jpg', '<strong>Mural #039</strong><br>Dimensions: 102" × 55"<br>Requires 60 Premium Matte Borderless Photo Paper Tiles (12 Columns × 5 Rows)')">
+            <div class="card-info">
+                <h3>Mural #039</h3>
+                <p>Size: 102" × 55"</p>
+                <div class="tile-badge">60 Tiles</div>
+            </div>
+        </div>
+        <div class="mural-card">
+            <img src="thumbnails\thumb_040.jpg" 
+                 alt="Mural #040" 
+                 onclick="openLightbox('images\040.jpg', '<strong>Mural #040</strong><br>Dimensions: 85" × 55"<br>Requires 50 Premium Matte Borderless Photo Paper Tiles (10 Columns × 5 Rows)')">
+            <div class="card-info">
+                <h3>Mural #040</h3>
+                <p>Size: 85" × 55"</p>
+                <div class="tile-badge">50 Tiles</div>
+            </div>
+        </div>
+        <div class="mural-card">
+            <img src="thumbnails\thumb_041.jpg" 
+                 alt="Mural #041" 
+                 onclick="openLightbox('images\041.jpg', '<strong>Mural #041</strong><br>Dimensions: 85" × 55"<br>Requires 50 Premium Matte Borderless Photo Paper Tiles (10 Columns × 5 Rows)')">
+            <div class="card-info">
+                <h3>Mural #041</h3>
+                <p>Size: 85" × 55"</p>
+                <div class="tile-badge">50 Tiles</div>
+            </div>
+        </div>
+        <div class="mural-card">
+            <img src="thumbnails\thumb_042.jpg" 
+                 alt="Mural #042" 
+                 onclick="openLightbox('images\042.jpg', '<strong>Mural #042</strong><br>Dimensions: 85" × 55"<br>Requires 50 Premium Matte Borderless Photo Paper Tiles (10 Columns × 5 Rows)')">
+            <div class="card-info">
+                <h3>Mural #042</h3>
+                <p>Size: 85" × 55"</p>
+                <div class="tile-badge">50 Tiles</div>
+            </div>
+        </div>
+        <div class="mural-card">
+            <img src="thumbnails\thumb_043.jpg" 
+                 alt="Mural #043" 
+                 onclick="openLightbox('images\043.jpg', '<strong>Mural #043</strong><br>Dimensions: 85" × 55"<br>Requires 50 Premium Matte Borderless Photo Paper Tiles (10 Columns × 5 Rows)')">
+            <div class="card-info">
+                <h3>Mural #043</h3>
+                <p>Size: 85" × 55"</p>
+                <div class="tile-badge">50 Tiles</div>
+            </div>
+        </div>
+        <div class="mural-card">
+            <img src="thumbnails\thumb_044.jpg" 
+                 alt="Mural #044" 
+                 onclick="openLightbox('images\044.jpg', '<strong>Mural #044</strong><br>Dimensions: 85" × 55"<br>Requires 50 Premium Matte Borderless Photo Paper Tiles (10 Columns × 5 Rows)')">
+            <div class="card-info">
+                <h3>Mural #044</h3>
+                <p>Size: 85" × 55"</p>
+                <div class="tile-badge">50 Tiles</div>
+            </div>
+        </div>
+        <div class="mural-card">
+            <img src="thumbnails\thumb_045.jpg" 
+                 alt="Mural #045" 
+                 onclick="openLightbox('images\045.jpg', '<strong>Mural #045</strong><br>Dimensions: 102" × 55"<br>Requires 60 Premium Matte Borderless Photo Paper Tiles (12 Columns × 5 Rows)')">
+            <div class="card-info">
+                <h3>Mural #045</h3>
+                <p>Size: 102" × 55"</p>
+                <div class="tile-badge">60 Tiles</div>
+            </div>
+        </div>
+        <div class="mural-card">
+            <img src="thumbnails\thumb_046.jpg" 
+                 alt="Mural #046" 
+                 onclick="openLightbox('images\046.jpg', '<strong>Mural #046</strong><br>Dimensions: 85" × 55"<br>Requires 50 Premium Matte Borderless Photo Paper Tiles (10 Columns × 5 Rows)')">
+            <div class="card-info">
+                <h3>Mural #046</h3>
+                <p>Size: 85" × 55"</p>
+                <div class="tile-badge">50 Tiles</div>
+            </div>
+        </div>
+        <div class="mural-card">
+            <img src="thumbnails\thumb_047.jpg" 
+                 alt="Mural #047" 
+                 onclick="openLightbox('images\047.jpg', '<strong>Mural #047</strong><br>Dimensions: 85" × 55"<br>Requires 50 Premium Matte Borderless Photo Paper Tiles (10 Columns × 5 Rows)')">
+            <div class="card-info">
+                <h3>Mural #047</h3>
+                <p>Size: 85" × 55"</p>
+                <div class="tile-badge">50 Tiles</div>
+            </div>
+        </div>
+        <div class="mural-card">
+            <img src="thumbnails\thumb_048.jpg" 
+                 alt="Mural #048" 
+                 onclick="openLightbox('images\048.jpg', '<strong>Mural #048</strong><br>Dimensions: 85" × 55"<br>Requires 50 Premium Matte Borderless Photo Paper Tiles (10 Columns × 5 Rows)')">
+            <div class="card-info">
+                <h3>Mural #048</h3>
+                <p>Size: 85" × 55"</p>
+                <div class="tile-badge">50 Tiles</div>
+            </div>
+        </div>
+        <div class="mural-card">
+            <img src="thumbnails\thumb_049.jpg" 
+                 alt="Mural #049" 
+                 onclick="openLightbox('images\049.jpg', '<strong>Mural #049</strong><br>Dimensions: 204" × 55"<br>Requires 120 Premium Matte Borderless Photo Paper Tiles (24 Columns × 5 Rows)')">
+            <div class="card-info">
+                <h3>Mural #049</h3>
+                <p>Size: 204" × 55"</p>
+                <div class="tile-badge">120 Tiles</div>
+            </div>
+        </div>
+        <div class="mural-card">
+            <img src="thumbnails\thumb_050.jpg" 
+                 alt="Mural #050" 
+                 onclick="openLightbox('images\050.jpg', '<strong>Mural #050</strong><br>Dimensions: 85" × 55"<br>Requires 50 Premium Matte Borderless Photo Paper Tiles (10 Columns × 5 Rows)')">
+            <div class="card-info">
+                <h3>Mural #050</h3>
+                <p>Size: 85" × 55"</p>
+                <div class="tile-badge">50 Tiles</div>
+            </div>
+        </div>
+        <div class="mural-card">
+            <img src="thumbnails\thumb_051.jpg" 
+                 alt="Mural #051" 
+                 onclick="openLightbox('images\051.jpg', '<strong>Mural #051</strong><br>Dimensions: 102" × 55"<br>Requires 60 Premium Matte Borderless Photo Paper Tiles (12 Columns × 5 Rows)')">
+            <div class="card-info">
+                <h3>Mural #051</h3>
+                <p>Size: 102" × 55"</p>
+                <div class="tile-badge">60 Tiles</div>
+            </div>
+        </div>
+        <div class="mural-card">
+            <img src="thumbnails\thumb_052.jpg" 
+                 alt="Mural #052" 
+                 onclick="openLightbox('images\052.jpg', '<strong>Mural #052</strong><br>Dimensions: 85" × 55"<br>Requires 50 Premium Matte Borderless Photo Paper Tiles (10 Columns × 5 Rows)')">
+            <div class="card-info">
+                <h3>Mural #052</h3>
+                <p>Size: 85" × 55"</p>
+                <div class="tile-badge">50 Tiles</div>
+            </div>
+        </div>
+        <div class="mural-card">
+            <img src="thumbnails\thumb_053.jpg" 
+                 alt="Mural #053" 
+                 onclick="openLightbox('images\053.jpg', '<strong>Mural #053</strong><br>Dimensions: 85" × 55"<br>Requires 50 Premium Matte Borderless Photo Paper Tiles (10 Columns × 5 Rows)')">
+            <div class="card-info">
+                <h3>Mural #053</h3>
+                <p>Size: 85" × 55"</p>
+                <div class="tile-badge">50 Tiles</div>
+            </div>
+        </div>
+        <div class="mural-card">
+            <img src="thumbnails\thumb_054.jpg" 
+                 alt="Mural #054" 
+                 onclick="openLightbox('images\054.jpg', '<strong>Mural #054</strong><br>Dimensions: 85" × 55"<br>Requires 50 Premium Matte Borderless Photo Paper Tiles (10 Columns × 5 Rows)')">
+            <div class="card-info">
+                <h3>Mural #054</h3>
+                <p>Size: 85" × 55"</p>
+                <div class="tile-badge">50 Tiles</div>
+            </div>
+        </div>
+        <div class="mural-card">
+            <img src="thumbnails\thumb_055.jpg" 
+                 alt="Mural #055" 
+                 onclick="openLightbox('images\055.jpg', '<strong>Mural #055</strong><br>Dimensions: 102" × 55"<br>Requires 60 Premium Matte Borderless Photo Paper Tiles (12 Columns × 5 Rows)')">
+            <div class="card-info">
+                <h3>Mural #055</h3>
+                <p>Size: 102" × 55"</p>
+                <div class="tile-badge">60 Tiles</div>
+            </div>
+        </div>
+        <div class="mural-card">
+            <img src="thumbnails\thumb_056.jpg" 
+                 alt="Mural #056" 
+                 onclick="openLightbox('images\056.jpg', '<strong>Mural #056</strong><br>Dimensions: 85" × 55"<br>Requires 50 Premium Matte Borderless Photo Paper Tiles (10 Columns × 5 Rows)')">
+            <div class="card-info">
+                <h3>Mural #056</h3>
+                <p>Size: 85" × 55"</p>
+                <div class="tile-badge">50 Tiles</div>
+            </div>
+        </div>
+        <div class="mural-card">
+            <img src="thumbnails\thumb_057.jpg" 
+                 alt="Mural #057" 
+                 onclick="openLightbox('images\057.jpg', '<strong>Mural #057</strong><br>Dimensions: 102" × 55"<br>Requires 60 Premium Matte Borderless Photo Paper Tiles (12 Columns × 5 Rows)')">
+            <div class="card-info">
+                <h3>Mural #057</h3>
+                <p>Size: 102" × 55"</p>
+                <div class="tile-badge">60 Tiles</div>
+            </div>
+        </div>
+        <div class="mural-card">
+            <img src="thumbnails\thumb_058.jpg" 
+                 alt="Mural #058" 
+                 onclick="openLightbox('images\058.jpg', '<strong>Mural #058</strong><br>Dimensions: 76" × 55"<br>Requires 45 Premium Matte Borderless Photo Paper Tiles (9 Columns × 5 Rows)')">
+            <div class="card-info">
+                <h3>Mural #058</h3>
+                <p>Size: 76" × 55"</p>
+                <div class="tile-badge">45 Tiles</div>
+            </div>
+        </div>
+        <div class="mural-card">
+            <img src="thumbnails\thumb_059.jpg" 
+                 alt="Mural #059" 
+                 onclick="openLightbox('images\059.jpg', '<strong>Mural #059</strong><br>Dimensions: 85" × 55"<br>Requires 50 Premium Matte Borderless Photo Paper Tiles (10 Columns × 5 Rows)')">
+            <div class="card-info">
+                <h3>Mural #059</h3>
+                <p>Size: 85" × 55"</p>
+                <div class="tile-badge">50 Tiles</div>
+            </div>
+        </div>
+        <div class="mural-card">
+            <img src="thumbnails\thumb_060.jpg" 
+                 alt="Mural #060" 
+                 onclick="openLightbox('images\060.jpg', '<strong>Mural #060</strong><br>Dimensions: 76" × 55"<br>Requires 45 Premium Matte Borderless Photo Paper Tiles (9 Columns × 5 Rows)')">
+            <div class="card-info">
+                <h3>Mural #060</h3>
+                <p>Size: 76" × 55"</p>
+                <div class="tile-badge">45 Tiles</div>
+            </div>
+        </div>
+        <div class="mural-card">
+            <img src="thumbnails\thumb_061.jpg" 
+                 alt="Mural #061" 
+                 onclick="openLightbox('images\061.jpg', '<strong>Mural #061</strong><br>Dimensions: 85" × 55"<br>Requires 50 Premium Matte Borderless Photo Paper Tiles (10 Columns × 5 Rows)')">
+            <div class="card-info">
+                <h3>Mural #061</h3>
+                <p>Size: 85" × 55"</p>
+                <div class="tile-badge">50 Tiles</div>
+            </div>
+        </div>
+        <div class="mural-card">
+            <img src="thumbnails\thumb_062.jpg" 
+                 alt="Mural #062" 
+                 onclick="openLightbox('images\062.jpg', '<strong>Mural #062</strong><br>Dimensions: 68" × 55"<br>Requires 40 Premium Matte Borderless Photo Paper Tiles (8 Columns × 5 Rows)')">
+            <div class="card-info">
+                <h3>Mural #062</h3>
+                <p>Size: 68" × 55"</p>
+                <div class="tile-badge">40 Tiles</div>
+            </div>
+        </div>
+        <div class="mural-card">
+            <img src="thumbnails\thumb_063.jpg" 
+                 alt="Mural #063" 
+                 onclick="openLightbox('images\063.jpg', '<strong>Mural #063</strong><br>Dimensions: 85" × 55"<br>Requires 50 Premium Matte Borderless Photo Paper Tiles (10 Columns × 5 Rows)')">
+            <div class="card-info">
+                <h3>Mural #063</h3>
+                <p>Size: 85" × 55"</p>
+                <div class="tile-badge">50 Tiles</div>
+            </div>
+        </div>
+        <div class="mural-card">
+            <img src="thumbnails\thumb_065.jpg" 
+                 alt="Mural #065" 
+                 onclick="openLightbox('images\065.jpg', '<strong>Mural #065</strong><br>Dimensions: 85" × 55"<br>Requires 50 Premium Matte Borderless Photo Paper Tiles (10 Columns × 5 Rows)')">
+            <div class="card-info">
+                <h3>Mural #065</h3>
+                <p>Size: 85" × 55"</p>
+                <div class="tile-badge">50 Tiles</div>
+            </div>
+        </div>
+        <div class="mural-card">
+            <img src="thumbnails\thumb_066.jpg" 
+                 alt="Mural #066" 
+                 onclick="openLightbox('images\066.jpg', '<strong>Mural #066</strong><br>Dimensions: 102" × 55"<br>Requires 60 Premium Matte Borderless Photo Paper Tiles (12 Columns × 5 Rows)')">
+            <div class="card-info">
+                <h3>Mural #066</h3>
+                <p>Size: 102" × 55"</p>
+                <div class="tile-badge">60 Tiles</div>
+            </div>
+        </div>
+        <div class="mural-card">
+            <img src="thumbnails\thumb_067.jpg" 
+                 alt="Mural #067" 
+                 onclick="openLightbox('images\067.jpg', '<strong>Mural #067</strong><br>Dimensions: 85" × 55"<br>Requires 50 Premium Matte Borderless Photo Paper Tiles (10 Columns × 5 Rows)')">
+            <div class="card-info">
+                <h3>Mural #067</h3>
+                <p>Size: 85" × 55"</p>
+                <div class="tile-badge">50 Tiles</div>
+            </div>
+        </div>
+        <div class="mural-card">
+            <img src="thumbnails\thumb_068.jpg" 
+                 alt="Mural #068" 
+                 onclick="openLightbox('images\068.jpg', '<strong>Mural #068</strong><br>Dimensions: 170" × 55"<br>Requires 100 Premium Matte Borderless Photo Paper Tiles (20 Columns × 5 Rows)')">
+            <div class="card-info">
+                <h3>Mural #068</h3>
+                <p>Size: 170" × 55"</p>
+                <div class="tile-badge">100 Tiles</div>
+            </div>
+        </div>
+        <div class="mural-card">
+            <img src="thumbnails\thumb_069.jpg" 
+                 alt="Mural #069" 
+                 onclick="openLightbox('images\069.jpg', '<strong>Mural #069</strong><br>Dimensions: 272" × 55"<br>Requires 160 Premium Matte Borderless Photo Paper Tiles (32 Columns × 5 Rows)')">
+            <div class="card-info">
+                <h3>Mural #069</h3>
+                <p>Size: 272" × 55"</p>
+                <div class="tile-badge">160 Tiles</div>
+            </div>
+        </div>
+        <div class="mural-card">
+            <img src="thumbnails\thumb_070.jpg" 
+                 alt="Mural #070" 
+                 onclick="openLightbox('images\070.jpg', '<strong>Mural #070</strong><br>Dimensions: 102" × 55"<br>Requires 60 Premium Matte Borderless Photo Paper Tiles (12 Columns × 5 Rows)')">
+            <div class="card-info">
+                <h3>Mural #070</h3>
+                <p>Size: 102" × 55"</p>
+                <div class="tile-badge">60 Tiles</div>
+            </div>
+        </div>
+        <div class="mural-card">
+            <img src="thumbnails\thumb_071.jpg" 
+                 alt="Mural #071" 
+                 onclick="openLightbox('images\071.jpg', '<strong>Mural #071</strong><br>Dimensions: 161" × 55"<br>Requires 95 Premium Matte Borderless Photo Paper Tiles (19 Columns × 5 Rows)')">
+            <div class="card-info">
+                <h3>Mural #071</h3>
+                <p>Size: 161" × 55"</p>
+                <div class="tile-badge">95 Tiles</div>
+            </div>
+        </div>
+        <div class="mural-card">
+            <img src="thumbnails\thumb_073.jpg" 
+                 alt="Mural #073" 
+                 onclick="openLightbox('images\073.jpg', '<strong>Mural #073</strong><br>Dimensions: 85" × 55"<br>Requires 50 Premium Matte Borderless Photo Paper Tiles (10 Columns × 5 Rows)')">
+            <div class="card-info">
+                <h3>Mural #073</h3>
+                <p>Size: 85" × 55"</p>
+                <div class="tile-badge">50 Tiles</div>
+            </div>
+        </div>
+        <div class="mural-card">
+            <img src="thumbnails\thumb_074.jpg" 
+                 alt="Mural #074" 
+                 onclick="openLightbox('images\074.jpg', '<strong>Mural #074</strong><br>Dimensions: 85" × 55"<br>Requires 50 Premium Matte Borderless Photo Paper Tiles (10 Columns × 5 Rows)')">
+            <div class="card-info">
+                <h3>Mural #074</h3>
+                <p>Size: 85" × 55"</p>
+                <div class="tile-badge">50 Tiles</div>
+            </div>
+        </div>
+        <div class="mural-card">
+            <img src="thumbnails\thumb_075.jpg" 
+                 alt="Mural #075" 
+                 onclick="openLightbox('images\075.jpg', '<strong>Mural #075</strong><br>Dimensions: 85" × 55"<br>Requires 50 Premium Matte Borderless Photo Paper Tiles (10 Columns × 5 Rows)')">
+            <div class="card-info">
+                <h3>Mural #075</h3>
+                <p>Size: 85" × 55"</p>
+                <div class="tile-badge">50 Tiles</div>
+            </div>
+        </div>
+        <div class="mural-card">
+            <img src="thumbnails\thumb_076.jpg" 
+                 alt="Mural #076" 
+                 onclick="openLightbox('images\076.jpg', '<strong>Mural #076</strong><br>Dimensions: 170" × 55"<br>Requires 100 Premium Matte Borderless Photo Paper Tiles (20 Columns × 5 Rows)')">
+            <div class="card-info">
+                <h3>Mural #076</h3>
+                <p>Size: 170" × 55"</p>
+                <div class="tile-badge">100 Tiles</div>
+            </div>
+        </div>
+        <div class="mural-card">
+            <img src="thumbnails\thumb_077.jpg" 
+                 alt="Mural #077" 
+                 onclick="openLightbox('images\077.jpg', '<strong>Mural #077</strong><br>Dimensions: 127" × 55"<br>Requires 75 Premium Matte Borderless Photo Paper Tiles (15 Columns × 5 Rows)')">
+            <div class="card-info">
+                <h3>Mural #077</h3>
+                <p>Size: 127" × 55"</p>
+                <div class="tile-badge">75 Tiles</div>
+            </div>
+        </div>
+        <div class="mural-card">
+            <img src="thumbnails\thumb_078.jpg" 
+                 alt="Mural #078" 
+                 onclick="openLightbox('images\078.jpg', '<strong>Mural #078</strong><br>Dimensions: 76" × 55"<br>Requires 45 Premium Matte Borderless Photo Paper Tiles (9 Columns × 5 Rows)')">
+            <div class="card-info">
+                <h3>Mural #078</h3>
+                <p>Size: 76" × 55"</p>
+                <div class="tile-badge">45 Tiles</div>
+            </div>
+        </div>
+        <div class="mural-card">
+            <img src="thumbnails\thumb_079.jpg" 
+                 alt="Mural #079" 
+                 onclick="openLightbox('images\079.jpg', '<strong>Mural #079</strong><br>Dimensions: 136" × 55"<br>Requires 80 Premium Matte Borderless Photo Paper Tiles (16 Columns × 5 Rows)')">
+            <div class="card-info">
+                <h3>Mural #079</h3>
+                <p>Size: 136" × 55"</p>
+                <div class="tile-badge">80 Tiles</div>
+            </div>
+        </div>
+        <div class="mural-card">
+            <img src="thumbnails\thumb_080.jpg" 
+                 alt="Mural #080" 
+                 onclick="openLightbox('images\080.jpg', '<strong>Mural #080</strong><br>Dimensions: 85" × 55"<br>Requires 50 Premium Matte Borderless Photo Paper Tiles (10 Columns × 5 Rows)')">
+            <div class="card-info">
+                <h3>Mural #080</h3>
+                <p>Size: 85" × 55"</p>
+                <div class="tile-badge">50 Tiles</div>
+            </div>
+        </div>
+        <div class="mural-card">
+            <img src="thumbnails\thumb_081.jpg" 
+                 alt="Mural #081" 
+                 onclick="openLightbox('images\081.jpg', '<strong>Mural #081</strong><br>Dimensions: 85" × 55"<br>Requires 50 Premium Matte Borderless Photo Paper Tiles (10 Columns × 5 Rows)')">
+            <div class="card-info">
+                <h3>Mural #081</h3>
+                <p>Size: 85" × 55"</p>
+                <div class="tile-badge">50 Tiles</div>
+            </div>
+        </div>
+        <div class="mural-card">
+            <img src="thumbnails\thumb_082.jpg" 
+                 alt="Mural #082" 
+                 onclick="openLightbox('images\082.jpg', '<strong>Mural #082</strong><br>Dimensions: 85" × 55"<br>Requires 50 Premium Matte Borderless Photo Paper Tiles (10 Columns × 5 Rows)')">
+            <div class="card-info">
+                <h3>Mural #082</h3>
+                <p>Size: 85" × 55"</p>
+                <div class="tile-badge">50 Tiles</div>
+            </div>
+        </div>
+        <div class="mural-card">
+            <img src="thumbnails\thumb_083.jpg" 
+                 alt="Mural #083" 
+                 onclick="openLightbox('images\083.jpg', '<strong>Mural #083</strong><br>Dimensions: 85" × 55"<br>Requires 50 Premium Matte Borderless Photo Paper Tiles (10 Columns × 5 Rows)')">
+            <div class="card-info">
+                <h3>Mural #083</h3>
+                <p>Size: 85" × 55"</p>
+                <div class="tile-badge">50 Tiles</div>
+            </div>
+        </div>
+        <div class="mural-card">
+            <img src="thumbnails\thumb_084.jpg" 
+                 alt="Mural #084" 
+                 onclick="openLightbox('images\084.jpg', '<strong>Mural #084</strong><br>Dimensions: 110" × 55"<br>Requires 65 Premium Matte Borderless Photo Paper Tiles (13 Columns × 5 Rows)')">
+            <div class="card-info">
+                <h3>Mural #084</h3>
+                <p>Size: 110" × 55"</p>
+                <div class="tile-badge">65 Tiles</div>
+            </div>
+        </div>
+        <div class="mural-card">
+            <img src="thumbnails\thumb_085.jpg" 
+                 alt="Mural #085" 
+                 onclick="openLightbox('images\085.jpg', '<strong>Mural #085</strong><br>Dimensions: 51" × 55"<br>Requires 30 Premium Matte Borderless Photo Paper Tiles (6 Columns × 5 Rows)')">
+            <div class="card-info">
+                <h3>Mural #085</h3>
+                <p>Size: 51" × 55"</p>
+                <div class="tile-badge">30 Tiles</div>
+            </div>
+        </div>
+        <div class="mural-card">
+            <img src="thumbnails\thumb_086.jpg" 
+                 alt="Mural #086" 
+                 onclick="openLightbox('images\086.jpg', '<strong>Mural #086</strong><br>Dimensions: 68" × 55"<br>Requires 40 Premium Matte Borderless Photo Paper Tiles (8 Columns × 5 Rows)')">
+            <div class="card-info">
+                <h3>Mural #086</h3>
+                <p>Size: 68" × 55"</p>
+                <div class="tile-badge">40 Tiles</div>
+            </div>
+        </div>
+        <div class="mural-card">
+            <img src="thumbnails\thumb_087.jpg" 
+                 alt="Mural #087" 
+                 onclick="openLightbox('images\087.jpg', '<strong>Mural #087</strong><br>Dimensions: 85" × 55"<br>Requires 50 Premium Matte Borderless Photo Paper Tiles (10 Columns × 5 Rows)')">
+            <div class="card-info">
+                <h3>Mural #087</h3>
+                <p>Size: 85" × 55"</p>
+                <div class="tile-badge">50 Tiles</div>
+            </div>
+        </div>
+        <div class="mural-card">
+            <img src="thumbnails\thumb_088.jpg" 
+                 alt="Mural #088" 
+                 onclick="openLightbox('images\088.jpg', '<strong>Mural #088</strong><br>Dimensions: 85" × 55"<br>Requires 50 Premium Matte Borderless Photo Paper Tiles (10 Columns × 5 Rows)')">
+            <div class="card-info">
+                <h3>Mural #088</h3>
+                <p>Size: 85" × 55"</p>
+                <div class="tile-badge">50 Tiles</div>
+            </div>
+        </div>
+        <div class="mural-card">
+            <img src="thumbnails\thumb_089.jpg" 
+                 alt="Mural #089" 
+                 onclick="openLightbox('images\089.jpg', '<strong>Mural #089</strong><br>Dimensions: 85" × 55"<br>Requires 50 Premium Matte Borderless Photo Paper Tiles (10 Columns × 5 Rows)')">
+            <div class="card-info">
+                <h3>Mural #089</h3>
+                <p>Size: 85" × 55"</p>
+                <div class="tile-badge">50 Tiles</div>
+            </div>
+        </div>
+        <div class="mural-card">
+            <img src="thumbnails\thumb_090.jpg" 
+                 alt="Mural #090" 
+                 onclick="openLightbox('images\090.jpg', '<strong>Mural #090</strong><br>Dimensions: 85" × 55"<br>Requires 50 Premium Matte Borderless Photo Paper Tiles (10 Columns × 5 Rows)')">
+            <div class="card-info">
+                <h3>Mural #090</h3>
+                <p>Size: 85" × 55"</p>
+                <div class="tile-badge">50 Tiles</div>
+            </div>
+        </div>
+        <div class="mural-card">
+            <img src="thumbnails\thumb_091.jpg" 
+                 alt="Mural #091" 
+                 onclick="openLightbox('images\091.jpg', '<strong>Mural #091</strong><br>Dimensions: 85" × 55"<br>Requires 50 Premium Matte Borderless Photo Paper Tiles (10 Columns × 5 Rows)')">
+            <div class="card-info">
+                <h3>Mural #091</h3>
+                <p>Size: 85" × 55"</p>
+                <div class="tile-badge">50 Tiles</div>
+            </div>
+        </div>
+        <div class="mural-card">
+            <img src="thumbnails\thumb_092.jpg" 
+                 alt="Mural #092" 
+                 onclick="openLightbox('images\092.jpg', '<strong>Mural #092</strong><br>Dimensions: 102" × 55"<br>Requires 60 Premium Matte Borderless Photo Paper Tiles (12 Columns × 5 Rows)')">
+            <div class="card-info">
+                <h3>Mural #092</h3>
+                <p>Size: 102" × 55"</p>
+                <div class="tile-badge">60 Tiles</div>
+            </div>
+        </div>
+        <div class="mural-card">
+            <img src="thumbnails\thumb_093.jpg" 
+                 alt="Mural #093" 
+                 onclick="openLightbox('images\093.jpg', '<strong>Mural #093</strong><br>Dimensions: 51" × 55"<br>Requires 30 Premium Matte Borderless Photo Paper Tiles (6 Columns × 5 Rows)')">
+            <div class="card-info">
+                <h3>Mural #093</h3>
+                <p>Size: 51" × 55"</p>
+                <div class="tile-badge">30 Tiles</div>
+            </div>
+        </div>
+        <div class="mural-card">
+            <img src="thumbnails\thumb_094.jpg" 
+                 alt="Mural #094" 
+                 onclick="openLightbox('images\094.jpg', '<strong>Mural #094</strong><br>Dimensions: 85" × 55"<br>Requires 50 Premium Matte Borderless Photo Paper Tiles (10 Columns × 5 Rows)')">
+            <div class="card-info">
+                <h3>Mural #094</h3>
+                <p>Size: 85" × 55"</p>
+                <div class="tile-badge">50 Tiles</div>
+            </div>
+        </div>
+        <div class="mural-card">
+            <img src="thumbnails\thumb_095.jpg" 
+                 alt="Mural #095" 
+                 onclick="openLightbox('images\095.jpg', '<strong>Mural #095</strong><br>Dimensions: 85" × 55"<br>Requires 50 Premium Matte Borderless Photo Paper Tiles (10 Columns × 5 Rows)')">
+            <div class="card-info">
+                <h3>Mural #095</h3>
+                <p>Size: 85" × 55"</p>
+                <div class="tile-badge">50 Tiles</div>
+            </div>
+        </div>
+        <div class="mural-card">
+            <img src="thumbnails\thumb_096.jpg" 
+                 alt="Mural #096" 
+                 onclick="openLightbox('images\096.jpg', '<strong>Mural #096</strong><br>Dimensions: 85" × 55"<br>Requires 50 Premium Matte Borderless Photo Paper Tiles (10 Columns × 5 Rows)')">
+            <div class="card-info">
+                <h3>Mural #096</h3>
+                <p>Size: 85" × 55"</p>
+                <div class="tile-badge">50 Tiles</div>
+            </div>
+        </div>
+        <div class="mural-card">
+            <img src="thumbnails\thumb_097.jpg" 
+                 alt="Mural #097" 
+                 onclick="openLightbox('images\097.jpg', '<strong>Mural #097</strong><br>Dimensions: 85" × 55"<br>Requires 50 Premium Matte Borderless Photo Paper Tiles (10 Columns × 5 Rows)')">
+            <div class="card-info">
+                <h3>Mural #097</h3>
+                <p>Size: 85" × 55"</p>
+                <div class="tile-badge">50 Tiles</div>
+            </div>
+        </div>
+        <div class="mural-card">
+            <img src="thumbnails\thumb_098.jpg" 
+                 alt="Mural #098" 
+                 onclick="openLightbox('images\098.jpg', '<strong>Mural #098</strong><br>Dimensions: 51" × 55"<br>Requires 30 Premium Matte Borderless Photo Paper Tiles (6 Columns × 5 Rows)')">
+            <div class="card-info">
+                <h3>Mural #098</h3>
+                <p>Size: 51" × 55"</p>
+                <div class="tile-badge">30 Tiles</div>
+            </div>
+        </div>
+        <div class="mural-card">
+            <img src="thumbnails\thumb_099.jpg" 
+                 alt="Mural #099" 
+                 onclick="openLightbox('images\099.jpg', '<strong>Mural #099</strong><br>Dimensions: 102" × 55"<br>Requires 60 Premium Matte Borderless Photo Paper Tiles (12 Columns × 5 Rows)')">
+            <div class="card-info">
+                <h3>Mural #099</h3>
+                <p>Size: 102" × 55"</p>
+                <div class="tile-badge">60 Tiles</div>
+            </div>
+        </div>
+        <div class="mural-card">
+            <img src="thumbnails\thumb_100.jpg" 
+                 alt="Mural #100" 
+                 onclick="openLightbox('images\100.jpg', '<strong>Mural #100</strong><br>Dimensions: 85" × 55"<br>Requires 50 Premium Matte Borderless Photo Paper Tiles (10 Columns × 5 Rows)')">
+            <div class="card-info">
+                <h3>Mural #100</h3>
+                <p>Size: 85" × 55"</p>
+                <div class="tile-badge">50 Tiles</div>
+            </div>
+        </div>
+        <div class="mural-card">
+            <img src="thumbnails\thumb_101.jpg" 
+                 alt="Mural #101" 
+                 onclick="openLightbox('images\101.jpg', '<strong>Mural #101</strong><br>Dimensions: 85" × 55"<br>Requires 50 Premium Matte Borderless Photo Paper Tiles (10 Columns × 5 Rows)')">
+            <div class="card-info">
+                <h3>Mural #101</h3>
+                <p>Size: 85" × 55"</p>
+                <div class="tile-badge">50 Tiles</div>
+            </div>
+        </div>
+        <div class="mural-card">
+            <img src="thumbnails\thumb_102.jpg" 
+                 alt="Mural #102" 
+                 onclick="openLightbox('images\102.jpg', '<strong>Mural #102</strong><br>Dimensions: 85" × 55"<br>Requires 50 Premium Matte Borderless Photo Paper Tiles (10 Columns × 5 Rows)')">
+            <div class="card-info">
+                <h3>Mural #102</h3>
+                <p>Size: 85" × 55"</p>
+                <div class="tile-badge">50 Tiles</div>
+            </div>
+        </div>
+        <div class="mural-card">
+            <img src="thumbnails\thumb_103.jpg" 
+                 alt="Mural #103" 
+                 onclick="openLightbox('images\103.jpg', '<strong>Mural #103</strong><br>Dimensions: 85" × 55"<br>Requires 50 Premium Matte Borderless Photo Paper Tiles (10 Columns × 5 Rows)')">
+            <div class="card-info">
+                <h3>Mural #103</h3>
+                <p>Size: 85" × 55"</p>
+                <div class="tile-badge">50 Tiles</div>
+            </div>
+        </div>
+        <div class="mural-card">
+            <img src="thumbnails\thumb_104.jpg" 
+                 alt="Mural #104" 
+                 onclick="openLightbox('images\104.jpg', '<strong>Mural #104</strong><br>Dimensions: 102" × 55"<br>Requires 60 Premium Matte Borderless Photo Paper Tiles (12 Columns × 5 Rows)')">
+            <div class="card-info">
+                <h3>Mural #104</h3>
+                <p>Size: 102" × 55"</p>
+                <div class="tile-badge">60 Tiles</div>
+            </div>
+        </div>
+        <div class="mural-card">
+            <img src="thumbnails\thumb_105.jpg" 
+                 alt="Mural #105" 
+                 onclick="openLightbox('images\105.jpg', '<strong>Mural #105</strong><br>Dimensions: 85" × 55"<br>Requires 50 Premium Matte Borderless Photo Paper Tiles (10 Columns × 5 Rows)')">
+            <div class="card-info">
+                <h3>Mural #105</h3>
+                <p>Size: 85" × 55"</p>
+                <div class="tile-badge">50 Tiles</div>
+            </div>
+        </div>
+        <div class="mural-card">
+            <img src="thumbnails\thumb_106.jpg" 
+                 alt="Mural #106" 
+                 onclick="openLightbox('images\106.jpg', '<strong>Mural #106</strong><br>Dimensions: 34" × 55"<br>Requires 20 Premium Matte Borderless Photo Paper Tiles (4 Columns × 5 Rows)')">
+            <div class="card-info">
+                <h3>Mural #106</h3>
+                <p>Size: 34" × 55"</p>
+                <div class="tile-badge">20 Tiles</div>
+            </div>
+        </div>
+        <div class="mural-card">
+            <img src="thumbnails\thumb_107.jpg" 
+                 alt="Mural #107" 
+                 onclick="openLightbox('images\107.jpg', '<strong>Mural #107</strong><br>Dimensions: 85" × 55"<br>Requires 50 Premium Matte Borderless Photo Paper Tiles (10 Columns × 5 Rows)')">
+            <div class="card-info">
+                <h3>Mural #107</h3>
+                <p>Size: 85" × 55"</p>
+                <div class="tile-badge">50 Tiles</div>
+            </div>
+        </div>
+        <div class="mural-card">
+            <img src="thumbnails\thumb_108.jpg" 
+                 alt="Mural #108" 
+                 onclick="openLightbox('images\108.jpg', '<strong>Mural #108</strong><br>Dimensions: 85" × 55"<br>Requires 50 Premium Matte Borderless Photo Paper Tiles (10 Columns × 5 Rows)')">
+            <div class="card-info">
+                <h3>Mural #108</h3>
+                <p>Size: 85" × 55"</p>
+                <div class="tile-badge">50 Tiles</div>
+            </div>
+        </div>
+        <div class="mural-card">
+            <img src="thumbnails\thumb_109.jpg" 
+                 alt="Mural #109" 
+                 onclick="openLightbox('images\109.jpg', '<strong>Mural #109</strong><br>Dimensions: 85" × 55"<br>Requires 50 Premium Matte Borderless Photo Paper Tiles (10 Columns × 5 Rows)')">
+            <div class="card-info">
+                <h3>Mural #109</h3>
+                <p>Size: 85" × 55"</p>
+                <div class="tile-badge">50 Tiles</div>
+            </div>
+        </div>
+        <div class="mural-card">
+            <img src="thumbnails\thumb_110.jpg" 
+                 alt="Mural #110" 
+                 onclick="openLightbox('images\110.jpg', '<strong>Mural #110</strong><br>Dimensions: 85" × 55"<br>Requires 50 Premium Matte Borderless Photo Paper Tiles (10 Columns × 5 Rows)')">
+            <div class="card-info">
+                <h3>Mural #110</h3>
+                <p>Size: 85" × 55"</p>
+                <div class="tile-badge">50 Tiles</div>
+            </div>
+        </div>
+        <div class="mural-card">
+            <img src="thumbnails\thumb_111.jpg" 
+                 alt="Mural #111" 
+                 onclick="openLightbox('images\111.jpg', '<strong>Mural #111</strong><br>Dimensions: 85" × 55"<br>Requires 50 Premium Matte Borderless Photo Paper Tiles (10 Columns × 5 Rows)')">
+            <div class="card-info">
+                <h3>Mural #111</h3>
+                <p>Size: 85" × 55"</p>
+                <div class="tile-badge">50 Tiles</div>
+            </div>
+        </div>
+        <div class="mural-card">
+            <img src="thumbnails\thumb_112.jpg" 
+                 alt="Mural #112" 
+                 onclick="openLightbox('images\112.jpg', '<strong>Mural #112</strong><br>Dimensions: 34" × 55"<br>Requires 20 Premium Matte Borderless Photo Paper Tiles (4 Columns × 5 Rows)')">
+            <div class="card-info">
+                <h3>Mural #112</h3>
+                <p>Size: 34" × 55"</p>
+                <div class="tile-badge">20 Tiles</div>
+            </div>
+        </div>
+        <div class="mural-card">
+            <img src="thumbnails\thumb_113.jpg" 
+                 alt="Mural #113" 
+                 onclick="openLightbox('images\113.jpg', '<strong>Mural #113</strong><br>Dimensions: 42" × 55"<br>Requires 25 Premium Matte Borderless Photo Paper Tiles (5 Columns × 5 Rows)')">
+            <div class="card-info">
+                <h3>Mural #113</h3>
+                <p>Size: 42" × 55"</p>
+                <div class="tile-badge">25 Tiles</div>
+            </div>
+        </div>
+        <div class="mural-card">
+            <img src="thumbnails\thumb_114.jpg" 
+                 alt="Mural #114" 
+                 onclick="openLightbox('images\114.jpg', '<strong>Mural #114</strong><br>Dimensions: 85" × 55"<br>Requires 50 Premium Matte Borderless Photo Paper Tiles (10 Columns × 5 Rows)')">
+            <div class="card-info">
+                <h3>Mural #114</h3>
+                <p>Size: 85" × 55"</p>
+                <div class="tile-badge">50 Tiles</div>
+            </div>
+        </div>
+        <div class="mural-card">
+            <img src="thumbnails\thumb_115.jpg" 
+                 alt="Mural #115" 
+                 onclick="openLightbox('images\115.jpg', '<strong>Mural #115</strong><br>Dimensions: 34" × 55"<br>Requires 20 Premium Matte Borderless Photo Paper Tiles (4 Columns × 5 Rows)')">
+            <div class="card-info">
+                <h3>Mural #115</h3>
+                <p>Size: 34" × 55"</p>
+                <div class="tile-badge">20 Tiles</div>
+            </div>
+        </div>
+        <div class="mural-card">
+            <img src="thumbnails\thumb_116.jpg" 
+                 alt="Mural #116" 
+                 onclick="openLightbox('images\116.jpg', '<strong>Mural #116</strong><br>Dimensions: 85" × 55"<br>Requires 50 Premium Matte Borderless Photo Paper Tiles (10 Columns × 5 Rows)')">
+            <div class="card-info">
+                <h3>Mural #116</h3>
+                <p>Size: 85" × 55"</p>
+                <div class="tile-badge">50 Tiles</div>
+            </div>
+        </div>
+        <div class="mural-card">
+            <img src="thumbnails\thumb_117.jpg" 
+                 alt="Mural #117" 
+                 onclick="openLightbox('images\117.jpg', '<strong>Mural #117</strong><br>Dimensions: 68" × 55"<br>Requires 40 Premium Matte Borderless Photo Paper Tiles (8 Columns × 5 Rows)')">
+            <div class="card-info">
+                <h3>Mural #117</h3>
+                <p>Size: 68" × 55"</p>
+                <div class="tile-badge">40 Tiles</div>
+            </div>
+        </div>
+        <div class="mural-card">
+            <img src="thumbnails\thumb_118.jpg" 
+                 alt="Mural #118" 
+                 onclick="openLightbox('images\118.jpg', '<strong>Mural #118</strong><br>Dimensions: 85" × 55"<br>Requires 50 Premium Matte Borderless Photo Paper Tiles (10 Columns × 5 Rows)')">
+            <div class="card-info">
+                <h3>Mural #118</h3>
+                <p>Size: 85" × 55"</p>
+                <div class="tile-badge">50 Tiles</div>
+            </div>
+        </div>
+        <div class="mural-card">
+            <img src="thumbnails\thumb_119.jpg" 
+                 alt="Mural #119" 
+                 onclick="openLightbox('images\119.jpg', '<strong>Mural #119</strong><br>Dimensions: 170" × 55"<br>Requires 100 Premium Matte Borderless Photo Paper Tiles (20 Columns × 5 Rows)')">
+            <div class="card-info">
+                <h3>Mural #119</h3>
+                <p>Size: 170" × 55"</p>
+                <div class="tile-badge">100 Tiles</div>
+            </div>
+        </div>
+        <div class="mural-card">
+            <img src="thumbnails\thumb_120.jpg" 
+                 alt="Mural #120" 
+                 onclick="openLightbox('images\120.jpg', '<strong>Mural #120</strong><br>Dimensions: 34" × 55"<br>Requires 20 Premium Matte Borderless Photo Paper Tiles (4 Columns × 5 Rows)')">
+            <div class="card-info">
+                <h3>Mural #120</h3>
+                <p>Size: 34" × 55"</p>
+                <div class="tile-badge">20 Tiles</div>
+            </div>
+        </div>
+        <div class="mural-card">
+            <img src="thumbnails\thumb_121.jpg" 
+                 alt="Mural #121" 
+                 onclick="openLightbox('images\121.jpg', '<strong>Mural #121</strong><br>Dimensions: 42" × 55"<br>Requires 25 Premium Matte Borderless Photo Paper Tiles (5 Columns × 5 Rows)')">
+            <div class="card-info">
+                <h3>Mural #121</h3>
+                <p>Size: 42" × 55"</p>
+                <div class="tile-badge">25 Tiles</div>
+            </div>
+        </div>
+        <div class="mural-card">
+            <img src="thumbnails\thumb_122.jpg" 
+                 alt="Mural #122" 
+                 onclick="openLightbox('images\122.jpg', '<strong>Mural #122</strong><br>Dimensions: 34" × 55"<br>Requires 20 Premium Matte Borderless Photo Paper Tiles (4 Columns × 5 Rows)')">
+            <div class="card-info">
+                <h3>Mural #122</h3>
+                <p>Size: 34" × 55"</p>
+                <div class="tile-badge">20 Tiles</div>
+            </div>
+        </div>
+        <div class="mural-card">
+            <img src="thumbnails\thumb_123.jpg" 
+                 alt="Mural #123" 
+                 onclick="openLightbox('images\123.jpg', '<strong>Mural #123</strong><br>Dimensions: 102" × 55"<br>Requires 60 Premium Matte Borderless Photo Paper Tiles (12 Columns × 5 Rows)')">
+            <div class="card-info">
+                <h3>Mural #123</h3>
+                <p>Size: 102" × 55"</p>
+                <div class="tile-badge">60 Tiles</div>
+            </div>
+        </div>
+        <div class="mural-card">
+            <img src="thumbnails\thumb_124.jpg" 
+                 alt="Mural #124" 
+                 onclick="openLightbox('images\124.jpg', '<strong>Mural #124</strong><br>Dimensions: 34" × 55"<br>Requires 20 Premium Matte Borderless Photo Paper Tiles (4 Columns × 5 Rows)')">
+            <div class="card-info">
+                <h3>Mural #124</h3>
+                <p>Size: 34" × 55"</p>
+                <div class="tile-badge">20 Tiles</div>
+            </div>
+        </div>
+        <div class="mural-card">
+            <img src="thumbnails\thumb_125.jpg" 
+                 alt="Mural #125" 
+                 onclick="openLightbox('images\125.jpg', '<strong>Mural #125</strong><br>Dimensions: 76" × 55"<br>Requires 45 Premium Matte Borderless Photo Paper Tiles (9 Columns × 5 Rows)')">
+            <div class="card-info">
+                <h3>Mural #125</h3>
+                <p>Size: 76" × 55"</p>
+                <div class="tile-badge">45 Tiles</div>
+            </div>
+        </div>
+        <div class="mural-card">
+            <img src="thumbnails\thumb_126.jpg" 
+                 alt="Mural #126" 
+                 onclick="openLightbox('images\126.jpg', '<strong>Mural #126</strong><br>Dimensions: 59" × 55"<br>Requires 35 Premium Matte Borderless Photo Paper Tiles (7 Columns × 5 Rows)')">
+            <div class="card-info">
+                <h3>Mural #126</h3>
+                <p>Size: 59" × 55"</p>
+                <div class="tile-badge">35 Tiles</div>
+            </div>
+        </div>
+        <div class="mural-card">
+            <img src="thumbnails\thumb_127.jpg" 
+                 alt="Mural #127" 
+                 onclick="openLightbox('images\127.jpg', '<strong>Mural #127</strong><br>Dimensions: 110" × 55"<br>Requires 65 Premium Matte Borderless Photo Paper Tiles (13 Columns × 5 Rows)')">
+            <div class="card-info">
+                <h3>Mural #127</h3>
+                <p>Size: 110" × 55"</p>
+                <div class="tile-badge">65 Tiles</div>
+            </div>
+        </div>
+        <div class="mural-card">
+            <img src="thumbnails\thumb_128.jpg" 
+                 alt="Mural #128" 
+                 onclick="openLightbox('images\128.jpg', '<strong>Mural #128</strong><br>Dimensions: 85" × 55"<br>Requires 50 Premium Matte Borderless Photo Paper Tiles (10 Columns × 5 Rows)')">
+            <div class="card-info">
+                <h3>Mural #128</h3>
+                <p>Size: 85" × 55"</p>
+                <div class="tile-badge">50 Tiles</div>
+            </div>
+        </div>
+        <div class="mural-card">
+            <img src="thumbnails\thumb_129.jpg" 
+                 alt="Mural #129" 
+                 onclick="openLightbox('images\129.jpg', '<strong>Mural #129</strong><br>Dimensions: 68" × 55"<br>Requires 40 Premium Matte Borderless Photo Paper Tiles (8 Columns × 5 Rows)')">
+            <div class="card-info">
+                <h3>Mural #129</h3>
+                <p>Size: 68" × 55"</p>
+                <div class="tile-badge">40 Tiles</div>
+            </div>
+        </div>
+        <div class="mural-card">
+            <img src="thumbnails\thumb_130.jpg" 
+                 alt="Mural #130" 
+                 onclick="openLightbox('images\130.jpg', '<strong>Mural #130</strong><br>Dimensions: 119" × 55"<br>Requires 70 Premium Matte Borderless Photo Paper Tiles (14 Columns × 5 Rows)')">
+            <div class="card-info">
+                <h3>Mural #130</h3>
+                <p>Size: 119" × 55"</p>
+                <div class="tile-badge">70 Tiles</div>
+            </div>
+        </div>
+        <div class="mural-card">
+            <img src="thumbnails\thumb_131.jpg" 
+                 alt="Mural #131" 
+                 onclick="openLightbox('images\131.jpg', '<strong>Mural #131</strong><br>Dimensions: 85" × 55"<br>Requires 50 Premium Matte Borderless Photo Paper Tiles (10 Columns × 5 Rows)')">
+            <div class="card-info">
+                <h3>Mural #131</h3>
+                <p>Size: 85" × 55"</p>
+                <div class="tile-badge">50 Tiles</div>
+            </div>
+        </div>
+        <div class="mural-card">
+            <img src="thumbnails\thumb_132.jpg" 
+                 alt="Mural #132" 
+                 onclick="openLightbox('images\132.jpg', '<strong>Mural #132</strong><br>Dimensions: 76" × 55"<br>Requires 45 Premium Matte Borderless Photo Paper Tiles (9 Columns × 5 Rows)')">
+            <div class="card-info">
+                <h3>Mural #132</h3>
+                <p>Size: 76" × 55"</p>
+                <div class="tile-badge">45 Tiles</div>
+            </div>
+        </div>
+        <div class="mural-card">
+            <img src="thumbnails\thumb_133.jpg" 
+                 alt="Mural #133" 
+                 onclick="openLightbox('images\133.jpg', '<strong>Mural #133</strong><br>Dimensions: 42" × 55"<br>Requires 25 Premium Matte Borderless Photo Paper Tiles (5 Columns × 5 Rows)')">
+            <div class="card-info">
+                <h3>Mural #133</h3>
+                <p>Size: 42" × 55"</p>
+                <div class="tile-badge">25 Tiles</div>
+            </div>
+        </div>
+        <div class="mural-card">
+            <img src="thumbnails\thumb_134.jpg" 
+                 alt="Mural #134" 
+                 onclick="openLightbox('images\134.jpg', '<strong>Mural #134</strong><br>Dimensions: 102" × 55"<br>Requires 60 Premium Matte Borderless Photo Paper Tiles (12 Columns × 5 Rows)')">
+            <div class="card-info">
+                <h3>Mural #134</h3>
+                <p>Size: 102" × 55"</p>
+                <div class="tile-badge">60 Tiles</div>
+            </div>
+        </div>
+        <div class="mural-card">
+            <img src="thumbnails\thumb_135.jpg" 
+                 alt="Mural #135" 
+                 onclick="openLightbox('images\135.jpg', '<strong>Mural #135</strong><br>Dimensions: 34" × 55"<br>Requires 20 Premium Matte Borderless Photo Paper Tiles (4 Columns × 5 Rows)')">
+            <div class="card-info">
+                <h3>Mural #135</h3>
+                <p>Size: 34" × 55"</p>
+                <div class="tile-badge">20 Tiles</div>
+            </div>
+        </div>
+        <div class="mural-card">
+            <img src="thumbnails\thumb_136.jpg" 
+                 alt="Mural #136" 
+                 onclick="openLightbox('images\136.jpg', '<strong>Mural #136</strong><br>Dimensions: 85" × 55"<br>Requires 50 Premium Matte Borderless Photo Paper Tiles (10 Columns × 5 Rows)')">
+            <div class="card-info">
+                <h3>Mural #136</h3>
+                <p>Size: 85" × 55"</p>
+                <div class="tile-badge">50 Tiles</div>
+            </div>
+        </div>
+        <div class="mural-card">
+            <img src="thumbnails\thumb_137.jpg" 
+                 alt="Mural #137" 
+                 onclick="openLightbox('images\137.jpg', '<strong>Mural #137</strong><br>Dimensions: 102" × 55"<br>Requires 60 Premium Matte Borderless Photo Paper Tiles (12 Columns × 5 Rows)')">
+            <div class="card-info">
+                <h3>Mural #137</h3>
+                <p>Size: 102" × 55"</p>
+                <div class="tile-badge">60 Tiles</div>
+            </div>
+        </div>
+        <div class="mural-card">
+            <img src="thumbnails\thumb_138.jpg" 
+                 alt="Mural #138" 
+                 onclick="openLightbox('images\138.jpg', '<strong>Mural #138</strong><br>Dimensions: 85" × 55"<br>Requires 50 Premium Matte Borderless Photo Paper Tiles (10 Columns × 5 Rows)')">
+            <div class="card-info">
+                <h3>Mural #138</h3>
+                <p>Size: 85" × 55"</p>
+                <div class="tile-badge">50 Tiles</div>
+            </div>
+        </div>
+    </div>
+
+    <div id="muralLightbox" class="lightbox-modal">
+        <span class="lightbox-close" onclick="closeLightbox()">&times;</span>
+        <img class="lightbox-content" id="lightboxImg" alt="Lightbox View">
+        <div id="lightboxCaption" class="lightbox-caption"></div>
+    </div>
+
+    <script>
+        function openLightbox(imgSrc, captionText) {
+            var modal = document.getElementById("muralLightbox");
+            var modalImg = document.getElementById("lightboxImg");
+            var caption = document.getElementById("lightboxCaption");
+            
+            modal.style.display = "block";
+            modalImg.src = imgSrc;
+            caption.innerHTML = captionText;
+        }
+
+        function closeLightbox() {
+            var modal = document.getElementById("muralLightbox");
+            modal.style.display = "none";
+        }
+
+        window.onclick = function(event) {
+            var modal = document.getElementById("muralLightbox");
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        }
+        
+        document.addEventListener('keydown', function(event) {
+            if (event.key === "Escape") {
+                closeLightbox();
+            }
+        });
+    </script>
+
+</body>
+</html>
